@@ -107,7 +107,7 @@ for N in tqdm.tqdm([2,4,8,16]):
     capacity_list_list.append(capacity_list)
 
 fig = plt.figure(figsize=(7,5))
-for i, N in tqdm.tqdm(zip(range(5), [4,8,16,32,64])):
+for i, N in tqdm.tqdm(zip(range(5), [2,4,8,16])):
     plt.plot(distance_list_list[i], capacity_list_list[i], marker="x", markersize=5, label="{} antennas".format(N))
 plt.title("secrecy capacity versus distance between Bob and Eve")
 plt.ylabel("secrecy capacity (bps/Hz)")

@@ -40,8 +40,8 @@ for N in [2,4,8,16]:
     max_cap_randB = []
     max_cap_randC = []
     max_cap = []
-    for i in tqdm.tqdm(range(300)): # 300 MC runs
-        h_Eve, h_Bob, H_Eve, H_Bob = generate_channels_secrecy(angle_Eve, angle_Bob, distance_Eve, distance_Bob, sigma_Eve, sigma_Bob, lambda_carrier, N, los=True)
+    for i in tqdm.tqdm(range(100)): # 300 MC runs
+        h_Eve, h_Bob, H_Eve, H_Bob = generate_channels_secrecy(angle_Eve, angle_Bob, distance_Eve, distance_Bob, sigma_Eve, sigma_Bob, lambda_carrier, N, los=False)
 
         opt_vals = []
         opt_Ws = []
@@ -93,5 +93,5 @@ for N in [2,4,8,16]:
         max_cap_randB.append(max_capacity_B)
         max_cap_randC.append(max_capacity_C)
     
-    print("{:.4}f & {:.4}f & {:.4}f & {:.4}f".format(np.mean(max_cap), np.mean(max_cap_randA), np.mean(max_cap_randB), np.mean(max_cap_randC)))
+    print("{:.4f} & {:.4f} & {:.4f} & {:.4f}".format(np.mean(max_cap), np.mean(max_cap_randA), np.mean(max_cap_randB), np.mean(max_cap_randC)))
 
